@@ -1,7 +1,6 @@
 Terrain t;
 int tw = 500;
 int th = 500;
-boolean isMouseOverTerrain;
 
 void setup() {
   
@@ -15,4 +14,14 @@ void draw() {
   
   background(255);
   t.altToColor();
+}
+
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {
+      t.changeDestinationColor(true);
+    } else if (keyCode == DOWN) {
+      t.changeDestinationColor(false);
+    }
+  }
 }
